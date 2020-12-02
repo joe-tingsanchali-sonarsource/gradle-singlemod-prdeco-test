@@ -11,6 +11,8 @@ version = '1.0'
 sonarqube {
     properties {
         property 'sonar.projectName', 'Example of SonarQube Scanner for Gradle Usage'
+        property 'sonar.projectKey', 'jotingsonarsourcegradle'
+        property 'sonar.host.url', 'http://ee82.jting.us.ngrok.io'
     }
 }
 
