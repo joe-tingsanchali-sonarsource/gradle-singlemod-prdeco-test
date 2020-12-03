@@ -13,7 +13,15 @@ sonarqube {
         property 'sonar.projectName', 'Example of SonarQube Scanner for Gradle Usage'
         property 'sonar.projectKey', 'jotingsonarsourcegradle'
         property 'sonar.host.url', 'http://ee82.jting.us.ngrok.io'
+        property "sonar.branch.name", getWorkingBranch()
     }
+}
+
+def getWorkingBranch() {
+    // Triple double-quotes for the breaklines
+    def workingBranch = "git rev-parse --abbrev-ref HEAD".execute().text.trim()
+    print "Working branch: " + workingBranch
+    return workingBranch
 }
 
 // In this section you declare where to find the dependencies of your project
